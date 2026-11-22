@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4e73df" />
+    <title>Kasir Laundry — MIMU LAUNDRY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navigasi admin">
+        <a class="brand" href="#" aria-label="Bersih Studio, beranda">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M8 11.5h16l-1.2 13H9.2L8 11.5Z" fill="currentColor" opacity=".18" />
+              <path d="M8 11.5h16l-1.2 13H9.2L8 11.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+              <path d="M12 11.5V9a4 4 0 0 1 8 0v2.5M12 17.5c1.5-1.4 2.8-1.4 4.2 0 1.4 1.4 2.8 1.4 4.3 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+              <path d="M24.5 6.5v3m-1.5-1.5h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </span>
+          <span class="brand-copy">
+            <strong>Bersih Studio</strong>
+            <small>LAUNDRY & CARE</small>
+          </span>
+        </a>
+
+        <div class="nav-caption">MENU ADMIN</div>
+        <nav class="main-nav">
+          <a class="nav-item active" href="#kasir-page" data-page="kasir-page" aria-current="page">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3" stroke="currentColor" stroke-width="1.7" /><path d="M8 7h8M8 11h2m4 0h2m-8 4h2m4 0h2m-8 4h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" /></svg>
+            <span>Kasir Laundry</span>
+            <span class="nav-dot"></span>
+          </a>
+          <a class="nav-item" href="#pengeluaran-harian-page" data-page="pengeluaran-harian-page">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18m4-14.5c-.7-.8-1.9-1.3-4-1.3-2.2 0-3.8 1.1-3.8 2.8 0 4.5 8 2.1 8 6.7 0 1.8-1.7 3.2-4.2 3.2-1.8 0-3.5-.6-4.5-1.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            <span>Pengeluaran Harian</span>
+          </a>
+          <a class="nav-item" href="#history-page" data-page="history-page">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /><circle cx="7" cy="5" r="1" fill="currentColor" /><circle cx="7" cy="12" r="1" fill="currentColor" /><circle cx="7" cy="19" r="1" fill="currentColor" /></svg>
+            <span>History</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="sidebar-note">
+            <span class="note-icon" aria-hidden="true">✦</span>
+            <p><strong>Hari yang produktif!</strong><br />Setiap cucian punya cerita baru.</p>
+          </div>
+          <div class="profile">
+            <div class="avatar">A</div>
+            <div class="profile-copy"><strong>Admin Toko</strong><small>Administrator</small></div>
+            <span class="profile-menu" aria-hidden="true">···</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content" id="kasir">
+        <header class="topbar">
+          <div class="breadcrumb"><span>Workspace</span><span class="crumb-slash">/</span><strong id="breadcrumb-page">Kasir</strong></div>
+          <div class="topbar-right">
+            <span class="today-date" id="today-date"></span>
+            <div class="header-profile"><span>Admin Toko</span><div class="header-avatar">A</div></div>
+          </div>
+        </header>
+
+        <div class="page-content admin-page" id="kasir-page">
+          <section class="page-heading">
+            <div>
+              <div class="eyebrow"><span class="eyebrow-line"></span> OPERASIONAL TOKO</div>
+              <h1>Overview <span>Kasir Laundry</span></h1>
+              <p class="page-subtitle">Catat pesanan baru dan buat bon dalam satu langkah.</p>
+            </div>
+            <div class="today-card">
+              <div class="today-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5m0 14h16M8 15l3-4 3 2 5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /><path d="M16 7h3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </div>
+              <div><small>TRANSAKSI HARI INI</small><strong id="today-count">0 pesanan</strong></div>
+              <span class="today-arrow" aria-hidden="true">↗</span>
+            </div>
+          </section>
+
+          <div class="workspace-grid">
+            <section class="form-panel panel" aria-labelledby="form-title">
+              <div class="panel-heading">
+                <div class="step-badge">01</div>
+                <div>
+                  <h2 id="form-title">Data pesanan</h2>
+                  <p>Lengkapi informasi pakaian pelanggan.</p>
+                </div>
+                <span class="required-note"><i>*</i> wajib diisi</span>
+              </div>
+
+              <form id="order-form">
+                <div class="field">
+                  <label for="customer-name">Nama pelanggan <span class="required-marker">*</span></label>
+                  <div class="input-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.7" /><path d="M5 20v-1.5a7 7 0 0 1 14 0V20H5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" /></svg>
+                    <input id="customer-name" name="customerName" type="text" placeholder="Contoh: Nadia Putri" autocomplete="name" required maxlength="80" />
+                  </div>
+                </div>
+
+                <fieldset class="field delivery-field">
+                  <legend>Metode layanan <span class="required-marker">*</span></legend>
+                  <div class="delivery-options">
+                    <label class="delivery-option selected" for="method-pickup">
+                      <input id="method-pickup" type="radio" name="method" value="Jemput" checked />
+                      <span class="option-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M3 11.5 12 4l9 7.5M5.5 10v10h13V10M9 20v-6h6v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                      </span>
+                      <span class="option-copy"><strong>Jemput</strong><small>Ambil dari alamat</small></span>
+                    </label>
+                    <label class="delivery-option" for="method-delivery">
+                      <input id="method-delivery" type="radio" name="method" value="Antar" />
+                      <span class="option-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M3 7h11v11H3zM14 11h4l3 3v4h-7z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" /><circle cx="7.5" cy="18" r="1.8" fill="currentColor" /><circle cx="17.5" cy="18" r="1.8" fill="currentColor" /><path d="M6 10h5m-5 3h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
+                      </span>
+                      <span class="option-copy"><strong>Antar</strong><small>Kirim ke alamat</small></span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <div class="field" id="address-field">
+                  <label for="customer-address"><span id="address-label">Alamat pengantaran</span> <span class="required-marker" id="address-required">*</span></label>
+                  <div class="input-wrap textarea-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" stroke="currentColor" stroke-width="1.7" /><circle cx="12" cy="10" r="2.2" stroke="currentColor" stroke-width="1.7" /></svg>
+                    <textarea id="customer-address" name="address" placeholder="Alamat tujuan, nama penerima, kecamatan..." rows="2" required maxlength="240"></textarea>
+                  </div>
+                  <small class="field-hint" id="address-hint">Alamat tujuan pengantaran pakaian yang sudah selesai.</small>
+                </div>
+
+                <div class="form-row">
+                  <div class="field">
+                    <label for="weight">Berat pakaian <span class="required-marker">*</span></label>
+                    <div class="input-wrap weight-wrap">
+                      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7.5 8h9l3 12h-15l3-12Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" /><path d="M9 8a3 3 0 1 1 6 0M12 12v3m-1.5-1.5h3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" /></svg>
+                      <input id="weight" name="weight" type="number" placeholder="0,0" min="0.1" max="500" step="0.1" required inputmode="decimal" />
+                      <span class="input-suffix">kg</span>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="service">Jenis jasa <span class="required-marker">*</span></label>
+                    <div class="select-wrap">
+                      <select id="service" name="service" required>
+                        <option value="damp-wash">Cuci lembab — 7 kg / Rp 10.000</option>
+                        <option value="dry-wash">Cuci kering — 7 kg / Rp 20.000</option>
+                        <option value="dry-fold">Cuci kering + lipat — 7 kg / Rp 24.000</option>
+                        <option value="ironing">Setrika — Rp 4.500 / kg</option>
+                        <option value="complete">Komplit — Rp 5.500 / kg</option>
+                      </select>
+                      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 10 5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="price-summary">
+                  <span><span class="summary-dot"></span> Estimasi harga <small id="rate-label">Rp 7.000 / kg</small></span>
+                  <strong id="estimate-price">Rp 0</strong>
+                </div>
+                <p class="price-note" id="price-note">Paket 7 kg; berat lebih dihitung prorata.</p>
+
+                <div class="form-actions">
+                  <button class="button button-quiet" id="reset-button" type="reset">Bersihkan</button>
+                  <button class="button button-primary" type="submit">
+                    <span>Simpan &amp; buat bon</span>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                  </button>
+                </div>
+              </form>
+            </section>
+
+            <aside class="receipt-column">
+              <section class="receipt-panel panel" aria-labelledby="receipt-heading">
+                <div class="receipt-panel-heading">
+                  <div>
+                    <div class="receipt-title-line"><span class="receipt-heading-icon">▤</span><h2 id="receipt-heading">Preview bon</h2></div>
+                    <p>Bon akan terisi setelah pesanan disimpan.</p>
+                  </div>
+                  <span class="preview-tag">PREVIEW</span>
+                </div>
+
+                <div class="receipt-paper" id="receipt-paper">
+                  <div class="receipt-brand">
+                    <span class="receipt-logo" aria-hidden="true">
+                      <svg viewBox="0 0 32 32" fill="none"><path d="M8 11.5h16l-1.2 13H9.2L8 11.5Z" fill="currentColor" opacity=".16" /><path d="M8 11.5h16l-1.2 13H9.2L8 11.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /><path d="M12 11.5V9a4 4 0 0 1 8 0v2.5M12 17.5c1.5-1.4 2.8-1.4 4.2 0 1.4 1.4 2.8 1.4 4.3 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+                    </span>
+                    <strong>Bersih Studio</strong>
+                    <small>LAUNDRY &amp; CARE</small>
+                  </div>
+                  <div class="receipt-dash"></div>
+                  <div class="receipt-meta"><span>No. pesanan</span><strong id="receipt-number">Akan dibuat</strong></div>
+                  <div class="receipt-meta"><span>Tanggal</span><strong id="receipt-date">—</strong></div>
+                  <div class="receipt-dash"></div>
+                  <div class="receipt-customer">
+                    <small>PELANGGAN</small>
+                    <strong id="receipt-name">Nama pelanggan</strong>
+                    <span id="receipt-address-block">
+                      <span class="receipt-address-label" id="receipt-address-label">Alamat pengantaran</span>
+                      <span id="receipt-address">Alamat akan tampil di sini</span>
+                    </span>
+                  </div>
+                  <div class="receipt-meta"><span>Metode</span><strong id="receipt-method">Jemput</strong></div>
+                  <div class="receipt-dash"></div>
+                  <div class="receipt-order-label">RINCIAN PESANAN</div>
+                  <div class="receipt-item">
+                    <div><strong id="receipt-service">Cuci &amp; setrika</strong><span id="receipt-weight">0 kg × Rp 7.000</span></div>
+                    <strong id="receipt-subtotal">Rp 0</strong>
+                  </div>
+                  <div class="receipt-dash"></div>
+                  <div class="receipt-total"><span>Total pembayaran</span><strong id="receipt-total">Rp 0</strong></div>
+                  <div class="receipt-thanks">Terima kasih sudah mempercayakan<br />pakaian Anda kepada kami ♡</div>
+                </div>
+
+                <button class="button button-print" id="print-button" type="button" disabled>
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 8V4h10v4M7 17H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2M7 14h10v6H7z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /><path d="M17 11.5h.01" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" /></svg>
+                  Cetak bon
+                </button>
+              </section>
+
+              <section class="history-panel panel" aria-labelledby="history-heading">
+                <div class="history-heading">
+                  <div><h2 id="history-heading">Pesanan tersimpan</h2><p>Riwayat transaksi di perangkat ini</p></div>
+                  <span id="history-count">0</span>
+                </div>
+                <div class="history-list" id="history-list">
+                  <div class="history-empty">Belum ada transaksi. Pesanan yang disimpan akan muncul di sini.</div>
+                </div>
+              </section>
+            </aside>
+          </div>
+          <footer class="page-footer"><span>© <span id="year"></span> Bersih Studio</span><span>Rapi, bersih, dan penuh perhatian.</span></footer>
+        </div>
+        <div class="page-content admin-page" id="pengeluaran-harian-page" hidden>
+          <section class="page-heading">
+            <div>
+              <h1>Pengeluaran Harian</h1>
+              <p class="page-subtitle">Catat biaya operasional laundry hari ini.</p>
+            </div>
+            <div class="today-card">
+              <div class="today-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18m4-14.5c-.7-.8-1.9-1.3-4-1.3-2.2 0-3.8 1.1-3.8 2.8 0 4.5 8 2.1 8 6.7 0 1.8-1.7 3.2-4.2 3.2-1.8 0-3.5-.6-4.5-1.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </div>
+              <div><small>TOTAL PENGELUARAN HARI INI</small><strong id="expense-total">Rp 0</strong></div>
+            </div>
+          </section>
+          <div class="expense-grid">
+            <section class="expense-form-panel panel" aria-labelledby="expense-form-title">
+              <div class="panel-heading">
+                <div>
+                  <h2 id="expense-form-title">Tambah pengeluaran</h2>
+                  <p>Tanggal pencatatan mengikuti hari ini.</p>
+                </div>
+                <span class="expense-date" id="expense-date"></span>
+              </div>
+              <form id="expense-form">
+                <div class="field">
+                  <label for="expense-name">Nama pengeluaran <span class="required-marker">*</span></label>
+                  <div class="input-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 6.5h14M5 12h14M5 17.5h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /><circle cx="18" cy="17.5" r="2.5" stroke="currentColor" stroke-width="1.6" /></svg>
+                    <input id="expense-name" name="expenseName" type="text" placeholder="Contoh: Detergen dan pewangi" maxlength="100" required />
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="expense-amount">Jumlah pengeluaran <span class="required-marker">*</span></label>
+                  <div class="input-wrap">
+                    <span class="currency-prefix">Rp</span>
+                    <input id="expense-amount" name="expenseAmount" type="number" placeholder="0" min="1" max="1000000000" step="1" inputmode="numeric" required />
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="expense-note">Catatan <small>(opsional)</small></label>
+                  <div class="input-wrap textarea-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5h14v14H5zM8 9h8m-8 3h8m-8 3h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                    <textarea id="expense-note" name="expenseNote" placeholder="Catatan tambahan..." rows="2" maxlength="240"></textarea>
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button class="button button-quiet" type="reset">Bersihkan</button>
+                  <button class="button button-primary" type="submit">
+                    <span>Simpan pengeluaran</span>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                  </button>
+                </div>
+              </form>
+            </section>
+            <section class="expense-history-panel panel" aria-labelledby="expense-history-title">
+              <div class="expense-history-heading">
+                <div>
+                  <h2 id="expense-history-title">Pengeluaran hari ini</h2>
+                  <p>Daftar biaya operasional yang dicatat hari ini.</p>
+                </div>
+                <span id="expense-count">0</span>
+              </div>
+              <div class="expense-list" id="expense-list">
+                <div class="history-empty">Belum ada pengeluaran yang dicatat hari ini.</div>
+              </div>
+            </section>
+          </div>
+          <footer class="page-footer"><span>© <span id="expense-year"></span> Bersih Studio</span><span>Catat pengeluaran agar arus kas tetap terpantau.</span></footer>
+        </div>
+        <div class="page-content admin-page" id="history-page" hidden>
+          <section class="page-heading">
+            <div>
+              <h1>History pesanan</h1>
+              <p class="page-subtitle">Pantau pesanan dan tandai jika sudah diambil pelanggan.</p>
+            </div>
+            <div class="today-card">
+              <div class="today-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 8v4l2.5 2.5M20 12a8 8 0 1 1-2.34-5.66M20 4v5h-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </div>
+              <div><small>PESANAN BELUM DIAMBIL</small><strong id="pending-order-count">0 pesanan</strong></div>
+            </div>
+          </section>
+          <section class="order-history-panel panel" aria-labelledby="order-history-title">
+            <div class="order-history-heading">
+              <div>
+                <h2 id="order-history-title">Semua pesanan</h2>
+                <p>Centang setelah pesanan diserahkan kepada pelanggan.</p>
+              </div>
+              <span id="all-order-count">0 pesanan</span>
+            </div>
+            <div class="order-history-list" id="order-history-list">
+              <div class="history-empty">Belum ada pesanan yang tersimpan.</div>
+            </div>
+          </section>
+          <footer class="page-footer"><span>© <span id="history-year"></span> Bersih Studio</span><span>Status pengambilan tersimpan di perangkat ini.</span></footer>
+        </div>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
